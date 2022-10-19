@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PordactController;
+
 use App\Http\Controllers\userController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,9 +25,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('user/login',[userController::class, 'userLogin'])->name('login');
 
 Route::post('user/rigister',[userController::class, 'rigister'])->name('userrigister');
+
 Route::group( ['prefix' => 'user','middleware' => ['auth:user-api'] ],function(){
    // authenticated staff routes here 
     Route::get('dashboard',[userController::class, 'dashboard']);
+    Route::get('prodacts',[PordactController::class, 'index']);
+
+    Route::post('createprodact',[PordactController::class, 'create']);
+    Route::get('prodacts/{name}',[PordactController::class, 'show']);
+
 });
 
 

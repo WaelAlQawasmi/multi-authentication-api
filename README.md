@@ -3,6 +3,7 @@
 multi authentication api using:
 1. passport authentication
 2. multi guard authentication
+3. resources
 
 ----------------------------------------------------------------
 ## user registration
@@ -16,6 +17,19 @@ multi authentication api using:
 - after login the user can access to dashboard using the token that take from login
 
 ![dash](img/dashboard.png)
+
+- add products
+
+![dash](img/addProduct.png)
+
+
+- find product by name __without resources__
+
+![dash](img/search.png)
+
+- find product by name __with resources__
+
+![dash](img/itemWithResorses.png)
 
 [ref1](https://www.mywebtuts.com/blog/how-to-use-multi-authentication-api-using-laravel-9)
 [ref2](https://stackoverflow.com/questions/58644716/laravel-and-passport-getting-sqlstate42s22-column-not-found-1054-unknown-col)
